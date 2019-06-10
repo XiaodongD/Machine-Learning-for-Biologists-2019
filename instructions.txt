@@ -1,0 +1,37 @@
+﻿1. Go to the link below, download and install Anaconda. Please remember choose the right version based your OS (Windows, Linux or Mac). For the exercises, we will use python3.7. 
+    https://www.anaconda.com/distribution/
+
+2.  Open the Terminal (Mac/Linux) or Anaconda Powershell Prompt (Windows). Firstly, run the command below.
+
+    conda install tensorflow
+
+    And then, run the command below.
+
+    conda install keras
+
+3. Create a directory (e.g., MLWorkshop), download MNIST Handwritten Digits database into this directory from the link below.
+    https://cs.nyu.edu/~roweis/data/mnist_all.mat
+
+4. Open the Terminal (Mac/Linux) or Anaconda Powershell Prompt (Windows). Firstly, go to the created directory (MLWorkshop). Then, run the command below
+
+    jupyter notebook
+
+
+5. In the opened browser, using the "new" button on the right-top conner to create a new notebook. Copy the code below to the created notebook. You can expect to see the version of the installed keras an image with '0'.
+
+
+##########################
+import scipy.io as scio
+import matplotlib.pyplot as plt
+import numpy as np
+import keras
+%matplotlib inline
+
+# Load the data
+print (keras.__version__)
+data = scio.loadmat("mnist_all.mat")
+img = data['train0'][2].reshape((28,28))
+fig=plt.figure()
+plt.imshow(img)
+plt.show()
+##########################
